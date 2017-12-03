@@ -1,0 +1,12 @@
+{
+  "name": "taffy",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "https://github.com/jamiesyme/taffy",
+  "author": "Jamie Syme",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.12.2",
+    "fs-extra": "^4.0.2"
+  }
+}
