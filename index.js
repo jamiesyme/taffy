@@ -27,10 +27,11 @@ Program
 
 Program
 	.command('ls [tags...]')
+	.option('--no-bloom', 'do not use the bloom filter optimization')
 	.action(
 		withErrors(
 			async (env, options) => {
-				await Commands.ls(env);
+				await Commands.ls(env, options.bloom);
 			}
 		)
 	);
