@@ -5,17 +5,32 @@ Taffy is an experiment to explore tag-based file systems. It runs on top of an e
 ## Usage
 
 ```bash
-$ node index.js add --tags="taffy documentation" README.md
+$ taffy
 
-$ node index.js add --tags="taffy npm" package.json yarn.lock
+  Usage:
+    taffy add [--tags <tag>...] <file>...
+    taffy ls [--no-bloom] [<tag>...]
+    taffy -h | --help
+    taffy --version
 
-$ node index.js ls
-4b4df306-f5d7-4f43-b57b-38cd6a497c35    taffy documentation
-4a23c39e-8013-4259-941f-c99ac122cbaf    taffy npm
-a51e5492-b8c7-47eb-a716-0a860370a024    taffy npm
+  Options:
+    -h --help   Show this screen.
+    --version   Show version.
+    --tags      Tags for new file(s).
+    --no-bloom  Disable bloom filter optimization.
 
-$ node index.js ls taffy documentation
-4b4df306-f5d7-4f43-b57b-38cd6a497c35    taffy documentation
+$ taffy add --tags "2016 summer" pics/2016/summer/*
+$ taffy add --tags "2016 winter" pics/2016/winter/*
+$ taffy ls
+68bf7067-1cb7-4779-8a55-362418d8a167  2016 winter
+8671850b-395c-48a3-950a-015412a81865  2016 summer
+ede9525a-c902-4ed0-95db-4b833bf12279  2016 winter
+
+$ taffy add --tags "2017 summer" pics/2017/summer/*
+$ taffy ls summer
+8671850b-395c-48a3-950a-015412a81865  2016 summer
+ba241a47-e441-4493-89ee-5a2408fd94f7  2017 summer
+ff38eb65-b515-4484-abbc-f6c2dd9e57ee  2017 summer
 ```
 
 ## Bloom Filters
