@@ -1,4 +1,3 @@
-const Program = require('commander');
 const Commands = require('./lib/commands');
 
 function help () {
