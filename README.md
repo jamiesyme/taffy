@@ -5,7 +5,7 @@ Taffy is an experiment to explore tag-based file systems. It runs on top of an e
 ## Usage
 
 ```bash
-$ taffy
+$ taffy --help
 
   Usage:
     taffy add [--tags <tag>...] <file>...
